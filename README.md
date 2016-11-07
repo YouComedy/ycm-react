@@ -22,4 +22,4 @@ yarn start
 ```
 
 ## License
-MIT
+[MIT](https://github.com/YouComedy/ycm-react/blob/master/LICENSE)
