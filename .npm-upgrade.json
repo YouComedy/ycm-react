@@ -1,0 +1,12 @@
+{
+  "ignore": {
+    "babel": {
+      "versions": ">5",
+      "reason": "API changes"
+    },
+    "babel-loader": {
+      "versions": ">5",
+      "reason": "API changes"
+    }
+  }
+}

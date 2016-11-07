@@ -1,0 +1,35 @@
+.menu {
+	border: 0;
+	border-bottom: 1px solid #ddd;
+	display: block;
+}
+
+.menu-item {
+	color: #333;
+}
+
+.menu-item.selected:before {
+	background-color: #0ad;
+}
+
+.tabnav {
+	display: none;
+}
+
+.tabnav-tab {
+	border: 1px solid transparent;
+}
+
+.tabnav-tab.selected {
+	border-bottom-color: #0ad;
+}
+
+@media screen and (min-width: 480px) {
+	.menu {
+		display: none;
+	}
+
+	.tabnav {
+		display: block;
+	}
+}

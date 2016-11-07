@@ -1,0 +1,36 @@
+*,
+*:after,
+*:before {
+	box-sizing: inherit;
+	color: inherit;
+	font: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #0ad;
+	text-decoration: none;
+}
+
+body {
+	background-color: #eee;
+	box-sizing: border-box;
+	color: #666;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
+	min-width: 320px;
+	padding: 0 1rem;
+}
+
+img {
+	border: 0;
+	max-width: 100%;
+}
+
+.content {
+	max-width: 768px;
+	margin-left: auto;
+	margin-right: auto;
+}

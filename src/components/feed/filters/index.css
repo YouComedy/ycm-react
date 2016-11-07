@@ -1,0 +1,12 @@
+.filters {
+	margin-bottom: 1rem;
+	overflow: hidden;
+}
+
+.filters .btn-group {
+	float: right;
+}
+
+.filters .btn {
+	font-weight: normal;
+}

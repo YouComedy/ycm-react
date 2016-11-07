@@ -1,0 +1,28 @@
+.alerts {
+	height: 0;
+	left: 1rem;
+	position: fixed;
+	right: 1rem;
+	text-align: right;
+	top: 1rem;
+	z-index: 999;
+}
+
+.alerts__alert {
+	animation: fadeIn .2s linear;
+	clear: right;
+	cursor: pointer;
+	float: right;
+	margin-bottom: 1rem;
+	transform: translateZ(0);
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
