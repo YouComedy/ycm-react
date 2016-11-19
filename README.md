@@ -8,11 +8,8 @@ This instruction covers only macOS. Windows/Linux systems could require system-s
 # install brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# install node
-brew install node
-
 # install yarn
-npm i -g yarn
+brew install yarn
 
 # install dependencies
 yarn install
