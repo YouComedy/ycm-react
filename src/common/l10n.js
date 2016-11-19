@@ -6,6 +6,7 @@ export const localize = (lng) =>
 		moment.locale(lng)
 		i18n.use(XHR).init({
 			lng,
+			fallbackLng: 'ru',
 			backend: {
 				loadPath: '/l10n/{{lng}}.json'
 			}
