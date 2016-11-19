@@ -8,17 +8,17 @@
     "upgrade": "npm-upgrade check"
   },
   "dependencies": {
-    "baobab": "2.3.3",
+    "baobab": "2.3.4",
     "bluebird": "3.4.6",
-    "flexboxgrid": "^6.3.1",
-    "i18next": "3.4.4",
+    "flexboxgrid": "6.3.1",
+    "i18next": "3.5.2",
     "i18next-xhr-backend": "1.2.1",
     "lodash.merge": "4.6.0",
     "lodash.uniqby": "4.7.0",
-    "moment": "2.15.2",
-    "preact": "6.4.0",
-    "preact-compat": "3.9.0",
-    "primer-alerts": "^0.4.0",
+    "moment": "2.16.0",
+    "preact": "7.0.3",
+    "preact-compat": "3.9.2",
+    "primer-alerts": "0.4.0",
     "primer-avatars": "0.3.0",
     "primer-buttons": "0.3.1",
     "primer-navigation": "0.6.0",
@@ -28,12 +28,12 @@
   "devDependencies": {
     "babel": "5.8.38",
     "babel-loader": "5.4.2",
-    "css-loader": "0.25.0",
+    "css-loader": "0.26.0",
     "extract-text-webpack-plugin": "2.0.0-beta.4",
     "gulp": "3.9.1",
     "npm-upgrade": "1.0.0",
     "style-loader": "0.13.1",
-    "webpack": "2.1.0-beta.25",
-    "webpack-dev-server": "2.1.0-beta.8"
+    "webpack": "2.1.0-beta.27",
+    "webpack-dev-server": "2.1.0-beta.11"
   }
 }
