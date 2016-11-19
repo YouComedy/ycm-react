@@ -7,6 +7,10 @@
     "babel-loader": {
       "versions": ">5",
       "reason": "API changes"
+    },
+    "i18next": {
+      "versions": ">3",
+      "reason": "Module export change"
     }
   }
 }
