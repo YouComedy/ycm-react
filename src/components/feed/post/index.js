@@ -8,8 +8,8 @@ import './index.css'
 export class Post extends React.PureComponent {
 	render() {
 		const {
-			content, content_numeric_timestamp, fullname, big_image, userAvatar,
-			username
+			content, content_numeric_timestamp, description, fullname,
+			big_image, userAvatar, username
 		} = this.props.post
 		const toUser = `/user/${username}`
 
@@ -18,17 +18,27 @@ export class Post extends React.PureComponent {
 				<div className="row">
 					<div>
 						<Thumb src={getDefaultAvatar(userAvatar)}
+							alt={fullname}
 							to={toUser} />
 					</div>
 
 					<div className="col-xs">
 						<Link to={toUser}>{fullname}</Link>
-						<div className="post__date">{formatDate(content_numeric_timestamp)}</div>
+
+						<div className="post__date">
+							{formatDate(content_numeric_timestamp)}
+						</div>
+
 						<div className="post__content">
 							{big_image
-								? <img className="post__image" src={big_image} />
+								? <img className="post__image"
+									src={big_image}
+									alt={description} />
+
 								: <div className="post__text"
-									dangerouslySetInnerHTML={{__html: content}} />
+									dangerouslySetInnerHTML={{
+										__html: content
+									}} />
 							}
 						</div>
 					</div>

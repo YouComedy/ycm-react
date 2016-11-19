@@ -7,7 +7,8 @@ import './index.css'
 
 export class Comment extends React.PureComponent {
 	replaceAttach = (text) => String(text)
-			.replace(/<div data-attach-imagesmall/, '<img class="comment__attach" src')
+			.replace(/<div data-attach-imagesmall/,
+				'<img class="comment__attach" alt="" src')
 			.replace('></div>', '>')
 
 	onClickAttach = (e) => {
@@ -28,15 +29,21 @@ export class Comment extends React.PureComponent {
 				<div className="row">
 					<div>
 						<Thumb src={getDefaultAvatar(userAvatar)}
+							alt={fullname}
 							to={toUser} />
 					</div>
 
 					<div className="col-xs">
 						<Link to={toUser}>{fullname}</Link>
-						<div className="comment__date">{formatDate(numeric_timestamp, 3)}</div>
+
+						<div className="comment__date">
+							{formatDate(numeric_timestamp, 3)}
+						</div>
+
 						<div className="comment__content"
-							dangerouslySetInnerHTML={{__html: this.replaceAttach(text)}}
-							onClick={this.onClickAttach} />
+							dangerouslySetInnerHTML={{
+								__html: this.replaceAttach(text)
+							}} onClick={this.onClickAttach} />
 					</div>
 
 					<div>
