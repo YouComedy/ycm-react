@@ -41,6 +41,12 @@ module.exports = {
 		filename: '[name].js',
 		path: path.resolve('public')
 	},
+
+	// Enable source-maps
+	// http://cheng.logdown.com/posts/2016/03/25/679045
+	devtool: isProd
+		? 'cheap-module-source-map'
+		: 'cheap-module-eval-source-map',
 	devServer: {
 		historyApiFallback: true,
 		contentBase: path.resolve('public'),
