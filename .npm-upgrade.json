@@ -1,24 +1,8 @@
 {
   "ignore": {
-    "babel": {
-      "versions": ">5",
-      "reason": "API changes"
-    },
-    "babel-loader": {
-      "versions": ">5",
-      "reason": "API changes"
-    },
     "i18next": {
       "versions": ">3",
       "reason": "Module export change"
-    },
-    "webpack": {
-      "versions": ">2.1.0-beta.25",
-      "reason": "Broken loader runner"
-    },
-    "webpack-dev-server": {
-        "versions": ">2.1.0-beta.10",
-        "reason": "Broken schema validation"
     }
   }
 }

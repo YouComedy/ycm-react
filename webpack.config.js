@@ -36,17 +36,15 @@ if (isProd) {
 }
 
 module.exports = {
-	entry: path.resolve('src'),
+	entry: [
+		'regenerator-runtime/runtime',
+		path.resolve('src')
+	],
 	output: {
 		filename: '[name].js',
 		path: path.resolve('public')
 	},
-
-	// Enable source-maps
-	// http://cheng.logdown.com/posts/2016/03/25/679045
-	devtool: isProd
-		? 'cheap-module-source-map'
-		: 'cheap-module-eval-source-map',
+	devtool: 'cheap-module-source-map',
 	devServer: {
 		historyApiFallback: true,
 		contentBase: path.resolve('public'),
@@ -60,8 +58,8 @@ module.exports = {
 	},
 	resolve: {
 		alias: {
-			react: 'preact-compat',
-			'react-dom': 'preact-compat'
+			react: 'inferno-compat',
+			'react-dom': 'inferno-compat'
 		},
 		modules: [
 			path.resolve('src'),
@@ -72,25 +70,17 @@ module.exports = {
 	module: {
 		loaders: [{
 			test: /\.js$/,
-			include: [
-				path.resolve('src'),
-
-				// preact-compat needs to be transpiled
-				// https://github.com/developit/preact-compat/issues/155#issuecomment-242905949
-				path.resolve('node_modules/preact-compat')
-			],
-			loader: 'babel',
+			loader: 'babel-loader',
 			query: {
-				stage: 0,
-				cacheDirectory: true
+				presets: ['latest', 'stage-0', 'react']
 			}
 		}, {
 			test: /\.css$/,
 			loader: !isProd
-				? 'style!css'
+				? 'style-loader!css-loader'
 				: ExtractTextPlugin.extract({
-					fallbackLoader: 'style',
-					loader: 'css'
+					fallbackLoader: 'style-loader',
+					loader: 'css-loader'
 				})
 		}]
 	}
