@@ -11,10 +11,9 @@ export const restoreState = (dao) => {
 	}
 }
 
-export const flashMessage = (dao, alert) => {
+export const setAlert = (dao, alert) => {
 	const cursor = dao.tree.select(toSelector('app.alerts'))
-	cursor.push(alert)
-	setTimeout(() => cursor.splice([0, 1]), CONST.ALERT_TIMEOUT)
+	cursor.set(0, alert)
 }
 
 export const saveState = (dao) => {

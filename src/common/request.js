@@ -19,12 +19,12 @@ export const request = (dao, {data, method = 'get', query = {}, url} = {}) => {
 		.then(({body, text}) => text && JSON.parse(text) || body)
 		.catch((e) => {
 			if (e.timeout) {
-				dao.actions.app.flashMessage(dao, {
+				dao.actions.app.setAlert(dao, {
 					text: i18n.t('errors.timeout'),
 					type: 'warn'
 				})
-			} else if (!e.status && e.isOperational) {
-				dao.actions.app.flashMessage(dao, {
+			} else if (e.isOperational) {
+				dao.actions.app.setAlert(dao, {
 					text: i18n.t('errors.offline'),
 					type: 'warn'
 				})
