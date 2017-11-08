@@ -14,6 +14,13 @@ export const FeedFactory = (selector) => branch({
 
 	state = {limiter: 0}
 
+	constructor(...args) {
+		super(...args)
+		this.handlers = {
+			onNextItem: this.onNextItem
+		}
+	}
+
 	componentDidMount() {
 		window.addEventListener('scroll', this.onScroll)
 		this.loadFeed()
@@ -49,6 +56,23 @@ export const FeedFactory = (selector) => branch({
 			{filter, items, selector}))
 	}
 
+	onNextItem = (_id) => {
+		const {items, filter} = this.props
+		const index = items[filter].findIndex(({id}) => id === _id)
+		const nextItem = items[filter][index + 1]
+		nextItem
+			? document.getElementById(nextItem.id)
+				.scrollIntoView({
+					block: 'start',
+					behavior: 'smooth'
+				})
+			: document.getElementById(_id)
+				.scrollIntoView({
+					block: 'end',
+					behavior: 'smooth'
+				})
+	}
+
 	onSelect = (id) => {
 		const {dao} = this.context
 		dao.actions.feed.setFilter(dao, {id, selector})
@@ -58,9 +82,7 @@ export const FeedFactory = (selector) => branch({
 		const {filter, isLoading, items} = this.props
 		if (isLoading) return
 
-		const {clientHeight, scrollHeight} = document.documentElement
-		const {scrollTop} = document.body
-
+		const {clientHeight, scrollHeight, scrollTop} = document.documentElement
 		if (scrollHeight - clientHeight - scrollTop < CONST.FEED_LOAD_OFFSET) {
 			this.setState({limiter: items[filter].length})
 		}
@@ -68,7 +90,7 @@ export const FeedFactory = (selector) => branch({
 
 	renderFeed = () => {
 		const {filter, items, children: renderItems} = this.props
-		return renderItems(items[filter])
+		return renderItems(items[filter], this.handlers)
 	}
 
 	renderFilters = () => {

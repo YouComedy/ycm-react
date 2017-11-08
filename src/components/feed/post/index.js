@@ -6,15 +6,19 @@ import {Thumb} from 'components/common/thumb'
 import './index.css'
 
 export class Post extends React.PureComponent {
+	onClick = () => {
+		this.props.onNextItem(this.props.post.id)
+	}
+
 	render() {
 		const {
 			content, content_numeric_timestamp, description, fullname,
-			big_image, userAvatar, username
+			big_image, userAvatar, username, id
 		} = this.props.post
 		const toUser = `/user/${username}`
 
 		return (
-			<Panel className="post">
+			<Panel className="post" id={id}>
 				<div className="row">
 					<div>
 						<Thumb src={getDefaultAvatar(userAvatar)}
@@ -29,17 +33,18 @@ export class Post extends React.PureComponent {
 							{formatDate(content_numeric_timestamp)}
 						</div>
 
-						<div className="post__content">
-							{big_image
-								? <img className="post__image"
-									src={big_image}
-									alt={description} />
+						<div className="post__content"
+							onClick={this.onClick}>
+								{big_image
+									? <img className="post__image"
+										src={big_image}
+										alt={description} />
 
-								: <div className="post__text"
-									dangerouslySetInnerHTML={{
-										__html: content
-									}} />
-							}
+									: <div className="post__text"
+										dangerouslySetInnerHTML={{
+											__html: content
+										}} />
+								}
 						</div>
 					</div>
 				</div>

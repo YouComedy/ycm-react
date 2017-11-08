@@ -1,4 +1,4 @@
 import './index.css'
 
-export const Panel = ({children, className}) =>
-	<div className={`panel ${className}`}>{children}</div>
+export const Panel = ({children, className, id}) =>
+	<div className={`panel ${className}`} id={id}>{children}</div>

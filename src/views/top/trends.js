@@ -14,8 +14,8 @@ export class TrendsView extends React.PureComponent {
 		dao.actions.app.setTitle(dao, {title})
 	}
 
-	renderPosts = (posts) => posts.map((post) =>
-		<Post post={post} key={post.id} />
+	renderPosts = (posts, handlers) => posts.map((post) =>
+		<Post post={post} key={post.id} {...handlers} />
 	)
 
 	render() {
