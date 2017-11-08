@@ -72,7 +72,7 @@ module.exports = {
 			test: /\.js$/,
 			loader: 'babel-loader',
 			query: {
-				presets: ['latest', 'stage-0', 'react']
+				presets: ['env', 'stage-0', 'react']
 			}
 		}, {
 			test: /\.css$/,
