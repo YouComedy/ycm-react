@@ -46,7 +46,8 @@ module.exports = (env) => {
 		],
 		output: {
 			filename: '[name].bundle.[chunkhash:4].js',
-			path: resolve('public')
+			path: resolve('public'),
+			publicPath: '/'
 		},
 		stats: {modules: false},
 		devtool: 'cheap-module-source-map',

@@ -1,2 +1,4 @@
+const {resolve} = require('path')
+
 module.exports = require('express')()
-	.get('/*', (req, res) => res.sendFile('public/index.html'))
+	.get('/*', (req, res) => res.sendFile(resolve('public/index.html')))
