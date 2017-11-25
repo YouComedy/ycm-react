@@ -1,8 +1,0 @@
-{
-  "ignore": {
-    "i18next": {
-      "versions": ">3",
-      "reason": "Module export change"
-    }
-  }
-}

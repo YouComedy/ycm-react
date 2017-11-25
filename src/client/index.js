@@ -9,7 +9,7 @@ import {getDefaultState} from 'state'
 localize('ru').then(() => render(
 	<Root dao={getDao(actions, getDefaultState)}>
 		<Router history={history}>{require('views/routes').routes}</Router>
-	</Root>, document.getElementById('app')
+	</Root>, document.getElementById('root')
 ))
 
 if (module.hot) module.hot.accept()

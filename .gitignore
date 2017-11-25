@@ -1,4 +1,8 @@
-*.log*
 *.lock
+*.log*
 .DS_Store
 node_modules
+/public/*.css
+/public/*.html
+/public/*.js
+/public/*.map

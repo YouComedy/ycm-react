@@ -3,20 +3,32 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "gulp version && webpack -p",
-    "start": "webpack-dev-server --hot --host 0.0.0.0",
-    "upgrade": "npm-upgrade check"
+    "heroku-postbuild": "npm run build",
+    "build": "webpack -p --env production",
+    "server": "webpack-dev-server --hot --host 0.0.0.0",
+    "upgrade": "npm-upgrade check",
+    "start": "node src/server"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react",
+      "stage-0"
+    ]
   },
   "dependencies": {
     "baobab": "2.5.0",
     "bluebird": "3.5.1",
+    "express": "^4.16.2",
     "flexboxgrid": "6.3.1",
+    "html-webpack-plugin": "^2.30.1",
     "i18next": "10.0.7",
     "i18next-xhr-backend": "1.5.0",
     "inferno-compat": "3.10.1",
     "lodash.merge": "4.6.0",
     "lodash.uniqby": "4.7.0",
     "moment": "2.19.1",
+    "morgan": "^1.9.0",
     "primer-alerts": "1.0.2",
     "primer-avatars": "1.4.1",
     "primer-buttons": "0.3.1",
