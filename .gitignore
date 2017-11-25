@@ -2,6 +2,7 @@
 *.log*
 .DS_Store
 node_modules
+package-lock.json
 /public/*.css
 /public/*.html
 /public/*.js
