@@ -5,3 +5,7 @@
 	margin-bottom: 1rem;
 	padding: 1rem;
 }
+
+.panel .row {
+	margin: 0;
+}

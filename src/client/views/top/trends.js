@@ -3,9 +3,9 @@ import {Post} from 'components/feed/post'
 import {FeedFactory} from 'controllers/feed'
 
 const FeedController = FeedFactory('feed.trends')
-export class TrendsView extends React.PureComponent {
+export class TrendsView extends React.Component {
 	static contextTypes = {
-		dao: React.PropTypes.object
+		dao() {}
 	}
 
 	componentDidMount() {

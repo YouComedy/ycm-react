@@ -3,9 +3,9 @@ import {Post} from 'components/feed/post'
 import {FeedFactory} from 'controllers/feed'
 
 const FeedController = FeedFactory('feed.top')
-export class TopView extends React.PureComponent {
+export class TopView extends React.Component {
 	static contextTypes = {
-		dao: React.PropTypes.object
+		dao() {}
 	}
 
 	componentDidMount() {

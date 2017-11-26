@@ -2,9 +2,9 @@ import Baobab from 'baobab'
 import {get, toSelector} from 'common/utils'
 
 export const branch = (cursors, Component) =>
-	class extends React.PureComponent {
+	class extends React.Component {
 		static contextTypes = {
-			dao: React.PropTypes.object
+			dao() {}
 		}
 
 		constructor(props, context) {
@@ -54,9 +54,9 @@ export const getDao = (actions, getDefaultState) => {
 	}
 }
 
-export class Root extends React.PureComponent {
+export class Root extends React.Component {
 	static childContextTypes = {
-		dao: React.PropTypes.object
+		dao() {}
 	}
 
 	getChildContext() {

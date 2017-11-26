@@ -1,3 +1,4 @@
+import throttle from 'lodash.throttle'
 import {CONST} from 'common/const'
 import {branch} from 'common/dao'
 import {Filters} from 'components/feed/filters'
@@ -7,9 +8,9 @@ export const FeedFactory = (selector) => branch({
 	filter: `${selector}.filter`,
 	isLoading: `${selector}.isLoading`,
 	items: `${selector}.items`
-}, class extends React.PureComponent {
+}, class extends React.Component {
 	static contextTypes = {
-		dao: React.PropTypes.object
+		dao() {}
 	}
 
 	state = {limiter: 0}
@@ -78,7 +79,7 @@ export const FeedFactory = (selector) => branch({
 		dao.actions.feed.setFilter(dao, {id, selector})
 	}
 
-	onScroll = (e) => {
+	onScroll = throttle((e) => {
 		const {filter, isLoading, items} = this.props
 		if (isLoading) return
 
@@ -86,7 +87,7 @@ export const FeedFactory = (selector) => branch({
 		if (scrollHeight - clientHeight - scrollTop < CONST.FEED_LOAD_OFFSET) {
 			this.setState({limiter: items[filter].length})
 		}
-	}
+	}, 1000)
 
 	renderFeed = () => {
 		const {filter, items, children: renderItems} = this.props

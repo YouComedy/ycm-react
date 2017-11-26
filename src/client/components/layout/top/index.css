@@ -1,6 +1,42 @@
 .top {
 	background-color: #333;
-	height: 40px;
+	height: 46px;
 	margin: 0 -1rem 1rem;
 	position: relative;
+}
+
+.top__logo {
+	float: left;
+	margin-bottom: -10px;
+	line-height: 19px;
+	width: 23px;
+	padding: 0;
+	outline: none;
+	border: none;
+	width: 50px;
+	height: 55px;
+	position: relative;
+	background: #292929;
+	box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+	border-bottom-left-radius: 50px 20px;
+	border-bottom-right-radius: 50px 20px;
+	float: none;
+	margin: auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+.top__logo:after {
+	content: '';
+	display: block;
+	background: url('http://static.youcomedy.me/common/img/logos/logo-mobile.png') center top no-repeat;
+	background-size: contain;
+	position: absolute;
+	top: 5px;
+	left: 0;
+	right: 0;
+	width: 30px;
+	height: 48px;
+	margin: auto;
 }

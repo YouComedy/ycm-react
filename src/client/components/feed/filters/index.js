@@ -1,7 +1,7 @@
 import 'primer-buttons/build/build.css'
 import './index.css'
 
-export class Filters extends React.PureComponent {
+export class Filters extends React.Component {
 	render() {
 		const {filters, onSelect, selected} = this.props
 		return (

@@ -5,9 +5,9 @@ export const AppController = branch({
 	alerts: 'app.alerts',
 	title: 'app.title',
 	user: 'app.user'
-}, class extends React.PureComponent {
+}, class extends React.Component {
 	static contextTypes = {
-		dao: React.PropTypes.object
+		dao() {}
 	}
 
 	constructor(props, context) {

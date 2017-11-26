@@ -3,9 +3,9 @@ import {Comment} from 'components/feed/comment'
 import {FeedFactory} from 'controllers/feed'
 
 const FeedController = FeedFactory('feed.comments')
-export class CommentsView extends React.PureComponent {
+export class CommentsView extends React.Component {
 	static contextTypes = {
-		dao: React.PropTypes.object
+		dao() {}
 	}
 
 	componentDidMount() {
@@ -19,9 +19,13 @@ export class CommentsView extends React.PureComponent {
 			? 'commentfeed'
 			: 'top/loadComments'
 
-	renderComments = (comments) => comments.map((comment) =>
-		<Comment comment={comment} key={comment.id} />
-	)
+	renderComments = (comments) =>
+		comments.map((comment) =>
+			<Comment comment={comment}
+				id={comment.id}
+				isDetached
+				key={comment.id} />
+		)
 
 	render() {
 		return (

@@ -1,4 +1,4 @@
-export class Title extends React.PureComponent {
+export class Title extends React.Component {
 	componentDidMount() {
 		this.updateTitle(this.props.children)
 	}

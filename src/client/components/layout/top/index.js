@@ -3,5 +3,7 @@ import './index.css'
 
 export const Top = () =>
 	<div className="top">
-		<div className="container" />
+		<div className="container top__container">
+			<Link className="top__logo" to="/" />
+		</div>
 	</div>
