@@ -1,5 +1,6 @@
 import {branch} from 'common/dao'
 import {Layout} from 'components/layout'
+import './index.css'
 
 export const AppController = branch({
 	alerts: 'app.alerts',
