@@ -16,8 +16,14 @@ npm i -g yarn
 # install dependencies
 yarn install
 
-# run development server
+# build bundles
+yarn build
+
+# run production server
 yarn start
+
+# run development server
+yarn server
 ```
 
 ## License
