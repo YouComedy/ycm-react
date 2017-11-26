@@ -45,7 +45,9 @@ module.exports = (env) => {
 			resolve('src/client')
 		],
 		output: {
-			filename: '[name].bundle.[chunkhash:4].js',
+			filename: isProd
+				? '[name].bundle.[chunkhash:4].js'
+				: '[name].bundle.js',
 			path: resolve('public'),
 			publicPath: '/'
 		},
@@ -80,10 +82,12 @@ module.exports = (env) => {
 				use: 'babel-loader'
 			}, {
 				test: /\.css$/,
-				use: ExtractTextPlugin.extract({
-					fallback: 'style-loader',
-					use: 'css-loader'
-				})
+				use: isProd
+					? ExtractTextPlugin.extract({
+						fallback: 'style-loader',
+						use: 'css-loader'
+					})
+					: ['style-loader', 'css-loader']
 			}]
 		}
 	}
